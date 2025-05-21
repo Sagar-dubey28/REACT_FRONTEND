@@ -14,13 +14,10 @@ const Card = ({ id, name, info, image, price }) => {
           <img src={image} alt="card-image" />
         </div>
         <div className="p-4">
-          <h6 className="mb-2 text-yellow-700 text-xl font-semibold">{price}</h6>
+          <h6 className="mb-2 text-yellow-700 text-xl font-semibold">₹ {price}</h6>
           <h6 className="mb-2 text-slate-800 text-xl font-semibold">{name}</h6>
           <p className="text-slate-600 leading-normal font-light">
             {description}
-            {/* <span className="text-xl border rounded-3xl p-2" onClick={readmoreHandler}>
-              {readmore ? `showless` : `read more`}
-            </span> */}
            
              <span  className="inline-flex items-center px-4 py-2 ml-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"  onClick={readmoreHandler}> 
                  {readmore ? `showless` : `read more`}
