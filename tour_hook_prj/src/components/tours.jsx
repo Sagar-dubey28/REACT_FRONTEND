@@ -1,8 +1,16 @@
 import React from 'react'
+import Card from './card'
 
-const Tours = () => {
+const Tours = ({tours}) => {
   return (
-    <div>Tours</div>
+    <>
+      <div>Plan Your Place</div>
+      <div>
+        {tours.map((tours)=>{
+           return <Card {...tours}  key={tours.id}/>
+        })}
+      </div>
+    </>
   )
 }
 
