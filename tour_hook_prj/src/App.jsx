@@ -5,9 +5,14 @@ import data from "./data/data";
 function App() {
   const [tours, setTours] = useState(data);
 
+  function removeTour(id){
+    const updatedTours = tours.filter((tours)=>{ return tours.id !== id})
+     setTours(updatedTours);
+  }
+
   return (
     <>
-      <Tours tours={tours} />
+      <Tours tours={tours} removeTour= {removeTour}/>
     </>
   );
 }
