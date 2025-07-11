@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Filter from "./components/filter";
 import Cards from "./components/Cards";
 import { apiUrl,filterData } from "./data/data";
+import Spinner from "./components/spinner";
 
 function App() {
  
@@ -37,7 +38,11 @@ function App() {
       <div>
        <Navbar/>
        <Filter filterData={filterData} />
-       <Cards courses={courses}/>
+       <div>
+        {
+          (loading)? <Spinner/> : <Cards courses={courses}/>
+        }
+       </div>
       </div>
   </>
   );
