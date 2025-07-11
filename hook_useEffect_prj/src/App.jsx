@@ -8,7 +8,7 @@ import { apiUrl,filterData } from "./data/data";
 
 function App() {
  
-  const[courses,Setcourses]=useState(null);
+  const[courses,Setcourses]=useState([]);
   const[loading,Setloading]=useState(true);
 
   async function getData(params)
@@ -17,7 +17,7 @@ function App() {
      try {
          const res = await fetch (apiUrl);
          const output = await res.json();
-         Setcourses(output);
+         Setcourses(output.data);
          
      } catch (error) {
        console.log("Error is there");
