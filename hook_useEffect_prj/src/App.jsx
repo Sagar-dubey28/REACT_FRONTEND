@@ -11,6 +11,7 @@ function App() {
  
   const[courses,Setcourses]=useState([]);
   const[loading,Setloading]=useState(true);
+  const[category,setCategory]= useState(filterData[0].title);
 
   async function getData(params)
   {
@@ -37,11 +38,11 @@ function App() {
   <>
       <div>
        <Navbar/>
-       <Filter filterData={filterData} />
+       <Filter filterData={filterData} category={category} setCategory={setCategory} />
        <div className="w-[1200px]    ml-6">
          <div className="">
            {
-          (loading)? <Spinner/> : <Cards courses={courses}/>
+          (loading)? <Spinner/> : <Cards courses={courses} category={category}/>
           }
          </div>
        </div>

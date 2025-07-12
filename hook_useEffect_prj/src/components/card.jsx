@@ -34,7 +34,7 @@ const Card = (props) => {
       <img
         src={course.image.url}
         alt={course.image.alt}
-        className="w-full h-48 object-cover"
+        className="w-full h-48 object-cover p-2"
       />
 
       <div className="p-4 flex flex-col justify-between flex-grow">
@@ -46,7 +46,7 @@ const Card = (props) => {
        <div>
            <button onClick={clickHandler}>
                         {
-                            !likedCourses.includes(props.course.id) ? <FcLikePlaceholder fontSize="1.75rem" /> : <FcLike fontSize="1.75rem" />
+                            likedCourses.includes(props.course.id) ? <FcLike fontSize="1.75rem" />  : <FcLikePlaceholder fontSize="1.75rem" /> 
                         }
                     </button>
        </div>
