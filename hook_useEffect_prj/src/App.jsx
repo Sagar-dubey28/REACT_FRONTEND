@@ -38,10 +38,12 @@ function App() {
       <div>
        <Navbar/>
        <Filter filterData={filterData} />
-       <div>
-        {
+       <div className="w-[1200px]    ml-6">
+         <div className="">
+           {
           (loading)? <Spinner/> : <Cards courses={courses}/>
-        }
+          }
+         </div>
        </div>
       </div>
   </>
